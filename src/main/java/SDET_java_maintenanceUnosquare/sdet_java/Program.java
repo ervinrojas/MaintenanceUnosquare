@@ -10,9 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Program {
 
-	public WebDriver SetUp() 
-	{
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\luis.osuna\\Downloads\\chromedriver_win32\\chromedriver.exe");
+	private WebDriver driver;
+	public WebDriver SetUp()	{
+
+		System.setProperty("webdriver.chrome.driver", "src/main/Resources/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://people.unosquare.com/");
@@ -37,9 +38,9 @@ public class Program {
 		
 	}
 	
-	By ThreeDotMenu = By.cssSelector("needs maintenance");
-	By AboutUS = By.xpath("needs maintenance");
-	By Personal = By.cssSelector("needs maintenance");
+	By ThreeDotMenu = By.cssSelector("span.navbar-toggler-icon");
+	By AboutUS = By.xpath("//*[@id='nav-list']/ul/li[3]/a");
+	By Personal = By.cssSelector("div.col-6.evenly.align-items-center.flex-column > div:nth-child(1) > div > h3");
 
 	public static void main(String[] args) {
 		
